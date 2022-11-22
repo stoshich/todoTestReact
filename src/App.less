@@ -1,0 +1,116 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.todoList {
+    width: 80%
+}
+
+.expired {
+    background-color: grey;
+}
+
+.todoItem {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid gray;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+
+    &.done {
+        background-color: rgb(121, 121, 121);
+
+        p {
+            text-decoration: line-through;
+        }
+    }
+
+
+
+    .todoItem__checkbox {
+        display: flex;
+        justify-content: center;
+        flex: 0 1 10%;
+        padding-right: 10px;
+
+        & input {
+            width: 5vw;
+            height: 5vh;
+        }
+    }
+
+    .todoItem__body {
+        font-size: 18px;
+        flex: 0 1 70%;
+
+        .expired-title {
+            color: crimson;
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+
+    .todoItem__title {
+        font-weight: 600;
+    }
+
+    .todoItem__buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        flex: 0 1 20%;
+
+        & div {
+            display: flex;
+            width: 70%;
+
+            & button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+
+
+
+.modal {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal__content {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    width: 50vw;
+    transform: scale(0.5);
+    transition: 0.4s all;
+    display: flex;
+    justify-content: center;
+}
+
+.modal__content.active {
+    transform: scale(1);
+}

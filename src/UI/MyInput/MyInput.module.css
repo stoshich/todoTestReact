@@ -1,0 +1,10 @@
+.wrapper {
+  margin: 10px;
+}
+
+.input {
+  font-size: 18px;
+  border: 1px solid teal;
+  border-radius: 5px;
+  padding: 4px;
+}

@@ -1,38 +1,93 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.todoList {
+  width: 80%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.expired {
+  background-color: grey;
+}
+.todoItem {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid gray;
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+.todoItem.done {
+  background-color: #797979;
+}
+.todoItem.done p {
+  text-decoration: line-through;
+}
+.todoItem .todoItem__checkbox {
+  display: flex;
+  justify-content: center;
+  flex: 0 1 10%;
+  padding-right: 10px;
+}
+.todoItem .todoItem__checkbox input {
+  width: 5vw;
+  height: 5vh;
+}
+.todoItem .todoItem__body {
+  font-size: 18px;
+  flex: 0 1 70%;
+}
+.todoItem .todoItem__body .expired-title {
+  color: crimson;
+  font-size: 20px;
+  font-weight: 600;
+}
+.todoItem .todoItem__title {
+  font-weight: 600;
+}
+.todoItem .todoItem__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 0 1 20%;
+}
+.todoItem .todoItem__buttons div {
+  display: flex;
+  width: 70%;
+}
+.todoItem .todoItem__buttons div button {
+  width: 100%;
+}
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal__content {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  width: 50vw;
+  transform: scale(0.5);
+  transition: 0.4s all;
+  display: flex;
+  justify-content: center;
+}
+.modal__content.active {
+  transform: scale(1);
 }

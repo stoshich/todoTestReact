@@ -1,0 +1,11 @@
+.button {
+    border: 1px solid teal;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    color: rgb(28, 39, 39);
+    cursor: pointer;
+    margin: 5px;
+    width: 10vw;
+    height: 6vh;
+}
